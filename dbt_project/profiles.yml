@@ -1,0 +1,19 @@
+jaffle_shop_analytics:
+  outputs:
+    dev:
+      type: duckdb
+      path: '../data/jaffle_shop.duckdb'
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_region: us-east-1
+    prod:
+      type: duckdb
+      path: '../data/jaffle_shop.duckdb'
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_region: us-east-1
+  target: dev

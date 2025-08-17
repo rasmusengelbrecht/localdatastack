@@ -1,0 +1,84 @@
+version: 2
+
+sources:
+  - name: raw_jaffle_shop
+    description: Raw data from the jaffle shop API via dlt
+    tables:
+      - name: customers
+        description: Customer information
+        columns:
+          - name: id
+            description: Unique customer identifier
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Customer full name
+
+      - name: orders
+        description: Order information
+        columns:
+          - name: id
+            description: Unique order identifier
+            tests:
+              - not_null
+              - unique
+          - name: customer_id
+            description: Customer who placed the order
+            tests:
+              - not_null
+          - name: ordered_at
+            description: Date and time the order was placed
+            tests:
+              - not_null
+          - name: subtotal
+            description: Order subtotal
+          - name: tax_paid
+            description: Tax amount paid
+          - name: order_total
+            description: Total order amount
+
+      - name: products
+        description: Product catalog
+        columns:
+          - name: sku
+            description: Product SKU (unique identifier)
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Product name
+          - name: price
+            description: Product price
+          - name: type
+            description: Product type
+          - name: description
+            description: Product description
+
+      - name: stores
+        description: Store locations
+        columns:
+          - name: id
+            description: Unique store identifier
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Store name
+          - name: opened_at
+            description: Store opening date
+
+      - name: supplies
+        description: Supply information
+        columns:
+          - name: id
+            description: Unique supply identifier
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Supply name
+          - name: cost
+            description: Supply cost
+          - name: perishable
+            description: Whether the supply is perishable

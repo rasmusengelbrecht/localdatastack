@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: jaffle_shop
+type: duckdb
+options:
+  filename: ../../../data/jaffle_shop.duckdb

@@ -1,0 +1,41 @@
+[project]
+name = "localdatastack"
+version = "0.1.0"
+description = "End-to-end local data stack with dlt, dbt, DuckDB, and Evidence"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "dlt[duckdb]>=0.4.0",
+    "dbt-core>=1.7.0",
+    "dbt-duckdb>=1.7.0",
+    "requests>=2.31.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "duckdb>=0.9.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+run-pipeline = "localdatastack.run:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']

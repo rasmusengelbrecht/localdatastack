@@ -1,0 +1,10 @@
+[sources.jaffle_shop]
+# Configuration for the jaffle shop source
+
+[destinations.duckdb]
+# DuckDB destination configuration
+dataset_name = "raw_jaffle_shop"
+
+[runtime]
+# Runtime configuration
+log_level = "INFO"
