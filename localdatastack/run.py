@@ -119,6 +119,13 @@ def start_dashboard():
     
     evidence_dir = Path("evidence_dashboard")
     
+    # Generate Evidence sources before starting dashboard
+    run_command(
+        "npm run sources",
+        cwd=evidence_dir,
+        description="Generating Evidence sources"
+    )
+    
     console.print("🚀 Starting Evidence dashboard at http://localhost:3000")
     console.print("Press Ctrl+C to stop the dashboard")
     
