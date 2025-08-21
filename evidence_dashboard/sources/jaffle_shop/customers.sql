@@ -9,5 +9,5 @@ select
     most_recent_order_date,
     is_churned,
     customer_segment
-from jaffle_shop.dim_customers
+from main.dim_customers
 order by total_orders desc

@@ -9,5 +9,5 @@ select
     order_month,
     order_day_of_week,
     is_weekend
-from jaffle_shop.fct_orders
+from main.fct_orders
 order by order_date desc

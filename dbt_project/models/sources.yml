@@ -69,13 +69,15 @@ sources:
             description: Store opening date
 
       - name: supplies
-        description: Supply information
+        description: Supply information (supplies can be associated with multiple stores)
+        tests:
+          - unique:
+              column_name: "id || '-' || sku"
         columns:
           - name: id
-            description: Unique supply identifier
+            description: Supply identifier (not unique - supplies can be in multiple stores)
             tests:
               - not_null
-              - unique
           - name: name
             description: Supply name
           - name: cost

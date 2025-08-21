@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Customer dimension table with order statistics and segmentation
+    columns:
+      - name: customer_id
+        description: Unique customer identifier
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: Customer full name
+        tests:
+          - not_null
+      - name: total_orders
+        description: Total number of orders placed by customer
+      - name: completed_orders  
+        description: Number of completed orders
+      - name: customer_segment
+        description: Customer segmentation based on order frequency
+        tests:
+          - accepted_values:
+              values: ['Never Ordered', 'One Time', 'Regular', 'Frequent']
+
+  - name: dim_products
+    description: Product dimension table
+    columns:
+      - name: product_id
+        description: Unique product identifier
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: Product name
+        tests:
+          - not_null
+
+  - name: fct_orders
+    description: Order fact table
+    columns:
+      - name: order_id
+        description: Unique order identifier  
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Customer who placed the order
+        tests:
+          - not_null
+      - name: order_date
+        description: Date the order was placed
+        tests:
+          - not_null

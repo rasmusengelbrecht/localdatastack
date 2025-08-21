@@ -4,5 +4,5 @@ select
     product_price,
     product_type,
     price_tier
-from jaffle_shop.dim_products
+from main.dim_products
 order by product_price desc
