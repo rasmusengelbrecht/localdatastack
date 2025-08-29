@@ -67,7 +67,7 @@ def run_pipeline():
     # Run the pipeline with replace mode to avoid duplicates
     load_info = pipeline.run(source, write_disposition="replace")
     
-    print(f"✅ Pipeline completed successfully!")
+    print("✅ Pipeline completed successfully!")
     print(f"📊 Load info: {load_info}")
     
     return load_info
