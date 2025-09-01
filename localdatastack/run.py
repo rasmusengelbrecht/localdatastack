@@ -73,16 +73,6 @@ def extract_data():
         description="Extracting data with dlt"
     )
     
-    # Copy the database to where dbt expects it
-    import shutil
-    dlt_db_path = Path("dlt_pipeline/jaffle_shop.duckdb")
-    dbt_db_path = Path("data/jaffle_shop.duckdb")
-    
-    if dlt_db_path.exists():
-        # Ensure data directory exists
-        dbt_db_path.parent.mkdir(exist_ok=True)
-        shutil.copy2(dlt_db_path, dbt_db_path)
-        console.print("✅ Database copied to dbt location")
 
 
 def transform_data():

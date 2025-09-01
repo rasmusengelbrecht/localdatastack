@@ -2,4 +2,4 @@
 name: jaffle_shop
 type: duckdb
 options:
-  filename: ../../../data/jaffle_shop.duckdb
+  filename: ../../../dlt_pipeline/jaffle_shop.duckdb

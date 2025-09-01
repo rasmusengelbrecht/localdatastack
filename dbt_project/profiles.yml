@@ -2,7 +2,7 @@ jaffle_shop_analytics:
   outputs:
     dev:
       type: duckdb
-      path: '../data/jaffle_shop.duckdb'
+      path: '../dlt_pipeline/jaffle_shop.duckdb'
       extensions:
         - httpfs
         - parquet
@@ -10,7 +10,7 @@ jaffle_shop_analytics:
         s3_region: us-east-1
     prod:
       type: duckdb
-      path: '../data/jaffle_shop.duckdb'
+      path: '../dlt_pipeline/jaffle_shop.duckdb'
       extensions:
         - httpfs
         - parquet

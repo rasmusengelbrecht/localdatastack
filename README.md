@@ -32,7 +32,7 @@ localdatastack/
 │   ├── package.json
 │   ├── pages/                  # Dashboard pages
 │   └── sources/                # SQL queries for Evidence
-└── data/
+└── dlt_pipeline/
     └── jaffle_shop.duckdb      # DuckDB database file
 ```
 
@@ -142,11 +142,11 @@ uv run dbt run --full-refresh
 
 ### dlt Configuration
 - API endpoint: `https://jaffle-shop.dlthub.com/`
-- Database: `data/jaffle_shop.duckdb`
+- Database: `dlt_pipeline/jaffle_shop.duckdb`
 - Schemas: Raw data loaded to `raw_jaffle_shop` schema
 
 ### dbt Configuration  
-- Database: DuckDB at `../data/jaffle_shop.duckdb`
+- Database: DuckDB at `../dlt_pipeline/jaffle_shop.duckdb`
 - Target: `dev` environment
 - Materializations:
   - Staging: `view`
@@ -154,7 +154,7 @@ uv run dbt run --full-refresh
   - Marts: `table`
 
 ### Evidence Configuration
-- Database: DuckDB connection to `../data/jaffle_shop.duckdb`
+- Database: DuckDB connection to `../dlt_pipeline/jaffle_shop.duckdb`
 - Layout: Sidebar navigation
 
 ## 🛠️ Troubleshooting
@@ -170,7 +170,7 @@ uv run dbt run --full-refresh
 
 ```bash
 # Remove database and start fresh
-rm -f data/jaffle_shop.duckdb
+rm -f dlt_pipeline/jaffle_shop.duckdb
 ./run.sh
 ```
 
